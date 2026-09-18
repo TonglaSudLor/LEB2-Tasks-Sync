@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LEB2 Tasks Sync</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="mark">L2</div>
+    <div><h1>LEB2 Tasks Sync</h1><p id="scheduleText">Runs every 30 minutes</p></div>
+  </header>
+
+  <section id="status" class="status">Ready.</section>
+
+  <div class="actions">
+    <button id="sync" class="primary">Sync now</button>
+    <button id="auth">Connect Google</button>
+  </div>
+
+  <section class="interval">
+    <label for="syncHours">Repeat every</label>
+    <div class="interval-row">
+      <input id="syncHours" type="number" min="0.5" max="168" step="0.5" value="0.5">
+      <span>hours</span>
+      <button id="saveInterval">Save</button>
+    </div>
+    <small>Use 0.5 for 30 minutes; maximum 168 hours.</small>
+  </section>
+
+  <section class="stats">
+    <div><strong id="taskCount">—</strong><span>tasks found</span></div>
+    <div><strong id="eventCount">—</strong><span>tasks synced</span></div>
+  </section>
+
+  <section>
+    <h2>Last sync</h2>
+    <p id="lastSync">Never</p>
+    <p id="error" class="error" hidden></p>
+  </section>
+
+  <footer>LEB2 must remain signed in. No LEB2 password is stored.</footer>
+  <script src="lib.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

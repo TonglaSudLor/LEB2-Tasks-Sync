@@ -1,0 +1,32 @@
+# Generated local configuration and credentials
+google_client_secret.json
+google_token.json
+.oauth_pending.json
+companion_config.json
+extension/brave-config.js
+allowed_users.json
+blocked_users.json
+
+# Private keys and environment
+*.pem
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Build outputs
+*.zip
+dist/
+build/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
