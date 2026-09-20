@@ -4,10 +4,9 @@ All notable changes are documented here.
 
 ## [Unreleased]
 
-- Prepared public GitHub documentation and security guidance.
-- Unified Chrome and Brave through the local companion.
-- Added safe per-installation configuration generation.
-- Added diagnostics, secret scanning, CI, and release packaging.
+## [0.4.1] - 2026-09-20
+
+- Detects expired or revoked Google authorization and shows actionable reconnection instructions instead of a generic HTTP 400 error.
 
 ## [0.4.0] - 2026-09-08
 

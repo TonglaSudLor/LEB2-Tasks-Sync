@@ -40,6 +40,17 @@ def request_json(url, method='GET', headers=None, data=None):
         raise RuntimeError(f'HTTP {exc.code}: {body[:500]}') from exc
 
 
+def google_refresh_error(error, description=''):
+    if error == 'invalid_grant':
+        return (
+            'Google authorization expired or was revoked. '
+            'Run `python oauth_listener.py`, approve Google Tasks again, '
+            'then restart the companion.'
+        )
+    detail = f' ({description})' if description else ''
+    return f'Google token refresh failed: {error or "unknown_error"}{detail}'
+
+
 def access_token():
     if not TOKEN_FILE.exists():
         raise RuntimeError('Google Tasks is not connected yet.')
@@ -54,8 +65,15 @@ def access_token():
         'grant_type': 'refresh_token'
     }).encode()
     req = urllib.request.Request('https://oauth2.googleapis.com/token', data=body, headers={'Content-Type': 'application/x-www-form-urlencoded'})
-    with urllib.request.urlopen(req, timeout=30) as response:
-        refreshed = json.load(response)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as response:
+            refreshed = json.load(response)
+    except urllib.error.HTTPError as exc:
+        try:
+            payload = json.loads(exc.read().decode(errors='replace'))
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            payload = {}
+        raise RuntimeError(google_refresh_error(payload.get('error'), payload.get('error_description', ''))) from exc
     token.update(refreshed)
     token['obtained_at'] = time.time()
     TOKEN_FILE.write_text(json.dumps(token, indent=2), encoding='utf-8')

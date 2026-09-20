@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "LEB2 Tasks Sync",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Sync LEB2 assessment deadlines to Google Tasks without storing your LEB2 password.",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtuHjnRpSEuGjRTeqIY/T5t1y2efBZvnBMrloZrQNQHPDK/L6xcnTDIn1eLnvAJsl3NquXdlUqp8jIXGSu1YMGsDhWuYAYNGvOIf0jzvP/7PukuiTUNaPCg1A4WPeUsWckvEeDkFlXEtSwn+UyOSealygq4ZLgAsZig9Pt8+UZNnZZOkHDNhDNEudIFH4EI0Tv+bYMJVmWA5F8BziqLwav6QIJst9X7FM0VeDjRc4GEtKnLY2LBs4oFcl+jkRGxQLZQqjd0xmrx8fuY7uibLtFMbb89HMAX25fSI7rppXVS22Kp4UPJ6dY9PjWXqzX89PzPPaCYlofuO7EfBNE8Ub4wIDAQAB",
   "permissions": ["alarms", "scripting", "storage", "tabs"],

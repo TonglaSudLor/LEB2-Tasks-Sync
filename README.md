@@ -2,7 +2,7 @@
 
 Unofficial Chrome/Brave extension that reads assignment deadlines from your signed-in KMUTT LEB2 session and creates matching Google Tasks.
 
-> **Status:** public beta (`0.4.0`). This project uses LEB2's internal website endpoints, not an official public API. It may stop working when LEB2 changes.
+> **Status:** public beta (`0.4.1`). This project uses LEB2's internal website endpoints, not an official public API. It may stop working when LEB2 changes.
 
 ## Features
 

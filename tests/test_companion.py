@@ -45,6 +45,12 @@ class CompanionTaskTests(unittest.TestCase):
         self.assertNotIn('blocked', message.lower())
         self.assertNotIn('authorized', message.lower())
 
+    def test_expired_google_token_has_actionable_message(self):
+        message = companion.google_refresh_error('invalid_grant', 'Token has been expired or revoked.')
+        self.assertIn('expired', message)
+        self.assertIn('revoked', message)
+        self.assertIn('python oauth_listener.py', message)
+
 
 if __name__ == '__main__':
     unittest.main()
