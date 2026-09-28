@@ -14,7 +14,7 @@ OUT = DIST / f'LEB2-Tasks-Sync-v{VERSION}.zip'
 INCLUDE = [
     '.github', 'docs', 'extension', 'scripts', 'tests',
     '.gitignore', 'CHANGELOG.md', 'CONTRIBUTING.md', 'LICENSE',
-    'PRIVACY.md', 'README.md', 'SECURITY.md', 'requirements.txt',
+    'PRIVACY.md', 'README.md', 'SECURITY.md', 'TERMS.md', 'requirements.txt',
     'companion.py', 'oauth_listener.py', 'oauth_setup.py', 'setup.py',
 ]
 EXCLUDE_NAMES = {

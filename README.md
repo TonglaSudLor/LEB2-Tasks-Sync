@@ -135,6 +135,7 @@ python -m unittest tests.test_companion -v
 ## Privacy and security
 
 - [Privacy Policy](PRIVACY.md)
+- [Terms of Service](TERMS.md)
 - [Security Policy](SECURITY.md)
 - Runtime credentials and tokens are ignored by Git and excluded from release archives.
 - Never upload `google_client_secret.json`, `google_token.json`, `companion_config.json`, `extension/brave-config.js`, private `.pem` files, or local policy files.
